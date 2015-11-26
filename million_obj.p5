@@ -2,6 +2,8 @@
 package Foo;
 use Moose;
 
+__PACKAGE__->meta->make_immutable;
+
 has i => ( is=> 'rw');
 
 for my $i (1..1_000_000) {
@@ -9,7 +11,6 @@ for my $i (1..1_000_000) {
     $obj->i($i);
 }
 
-__PACKAGE__->meta->make_immutable;
 
 1;
 
