@@ -4,20 +4,6 @@
 #
 use v6;
 
-my $rows = 40;
-my $cols = 79;
- 
-my $t0 = DateTime.now.Instant;
-
-loop (my $y = 1; $y >= -1; $y -= $rows/800) { # rows
-        loop (my $x = -2; $x <= 0.5; $x += $cols/2500) { # cols
-            print mandelbrot($x + $y * i) ?? ' ' !! '#';
-        }
-        print "\n";
-}
-
-say DateTime.now.Instant - $t0;
-
 sub mandelbrot($c) {
     my $z = $c;
     for (1 .. 20) {
@@ -26,4 +12,8 @@ sub mandelbrot($c) {
     }
 }
 
-
+loop (my $y = 1; $y >= -1; $y -= 0.05) {
+    loop (my $x = -2; $x <= 0.5; $x += 0.0315)
+    {print mandelbrot($x + $y * i) ?? ' ' !! '#'}
+    print "\n"
+}
