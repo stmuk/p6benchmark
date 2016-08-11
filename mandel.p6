@@ -9,8 +9,6 @@ my $cols = 79;
  
 my $t0 = DateTime.now.Instant;
 
-$PROCESS::SCHEDULER=ThreadPoolScheduler.new(initial_threads => 0, max_threads =>1, uncaught_handler => Callable);
-
 loop (my $y = 1; $y >= -1; $y -= $rows/800) { # rows
         loop (my $x = -2; $x <= 0.5; $x += $cols/2500) { # cols
             print mandelbrot($x + $y * i) ?? ' ' !! '#';
@@ -18,7 +16,7 @@ loop (my $y = 1; $y >= -1; $y -= $rows/800) { # rows
         print "\n";
 }
 
-say  DateTime.now.Instant - $t0;
+say DateTime.now.Instant - $t0;
 
 sub mandelbrot($c) {
     my $z = $c;
