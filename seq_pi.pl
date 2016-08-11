@@ -7,5 +7,5 @@ while ( $i <= $n) {
   $sum += 1.0 / ( 1.0 + $x * $x );
   $i += 1;
 }
-my $pi = 6.0 * $delta * $sum;
+my $pi = 4.0 * $delta * $sum;
 say $pi;
