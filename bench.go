@@ -11,7 +11,6 @@ import (
 
 func main() {
 
-	const DEBUG = 0
 	var num int64
 	var target string
 	var lang string
@@ -30,9 +29,7 @@ func main() {
 
 	for i = 0; i < num; i++ {
 
-		if DEBUG == 1 {
-			fmt.Printf("%d\n", i)
-		}
+		fmt.Printf("%d ", i)
 
 		err := exec.Command(lang, target).Run()
 
@@ -44,6 +41,6 @@ func main() {
 
 	elapsed := time.Since(start).Seconds()
 	avg := elapsed / float64(num)
-	fmt.Printf("\"%s %s\" %d run(s)  avg=%0.2f sec(s)", lang, target, num, avg)
+	fmt.Printf("\n\"%s %s\" %d run(s)  avg=%0.2f sec(s)\n", lang, target, num, avg)
 
 }
