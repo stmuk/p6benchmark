@@ -34,7 +34,7 @@ func main() {
 
 		out, err := exec.Command(lang, target...).Output()
 
-		if i == 0 {
+		if num == 1 {
 			fmt.Fprintf(os.Stderr, "%s\n", out)
 		}
 
