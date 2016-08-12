@@ -6,6 +6,7 @@ import (
 	"os"
 	"os/exec"
 	"strconv"
+	"strings"
 	"time"
 )
 
@@ -45,6 +46,6 @@ func main() {
 
 	elapsed := time.Since(start).Seconds()
 	avg := elapsed / float64(num)
-	fmt.Printf("\n\"%s %s\" %d run(s) wallclock=%0.2f avg=%0.2f sec(s)\n", lang, target, num, float64(elapsed), avg)
+	fmt.Printf("\n\"%s %s\" %d run(s) wallclock=%0.2f avg=%0.2f sec(s)\n", lang, strings.Join(target, ""), num, float64(elapsed), avg)
 
 }
