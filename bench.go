@@ -31,7 +31,11 @@ func main() {
 
 		fmt.Printf("%d ", i)
 
-		err := exec.Command(lang, target...).Run()
+		out, err := exec.Command(lang, target...).Output()
+
+		if i == 0 {
+			fmt.Printf("%s\n", out)
+		}
 
 		if err != nil {
 			log.Fatal(err)
@@ -41,6 +45,6 @@ func main() {
 
 	elapsed := time.Since(start).Seconds()
 	avg := elapsed / float64(num)
-	fmt.Printf("\n\"%s %s\" %d run(s)  avg=%0.2f sec(s)\n", lang, target, num, avg)
+	fmt.Printf("\n\"%s %s\" %d run(s) wallclock=%0.2f avg=%0.2f sec(s)\n", lang, target, num, float64(elapsed), avg)
 
 }

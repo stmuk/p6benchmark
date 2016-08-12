@@ -1,4 +1,6 @@
 #!/bin/bash -x
+# start java eval server with  "./perl6-eval-server -bind-stdin -cookie TESTCOOKIE -app perl6.jar" in  "../../perl6/rakudo"
 
-./bench 5 perl million_obj.pl
-./bench 5 perl6 million_obj.p6
+./bench 10 perl million_obj.pl
+./bench 10 perl6 million_obj.p6
+./bench 10 perl million_obj2.pl
