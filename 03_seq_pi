@@ -1,0 +1,5 @@
+#!/bin/bash -x
+
+./bench 10 perl -M5.10.0 seq_pi.pl
+./bench 10 perl6 seq_pi.pl
+./bench 10 perl6 seq_pi2.p6

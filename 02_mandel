@@ -1,0 +1,4 @@
+#!/bin/bash -x
+
+./bench 10 perl mandel.pl
+./bench 10 perl6 mandel.p6
