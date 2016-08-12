@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash -x
 
-./bench 10 perl million_obj.pl
-./bench 10 perl6 million_obj.p6
+./bench 5 perl million_obj.pl
+./bench 5 perl6 million_obj.p6
