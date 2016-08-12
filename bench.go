@@ -34,7 +34,7 @@ func main() {
 		out, err := exec.Command(lang, target...).Output()
 
 		if i == 0 {
-			fmt.Printf("%s\n", out)
+			fmt.Printf(os.Stderr, "%s\n", out)
 		}
 
 		if err != nil {
