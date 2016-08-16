@@ -43,7 +43,7 @@ func main() {
 
 	elapsed := time.Since(start).Seconds()
 	avg := elapsed / float64(repeatMax)
-	fmt.Printf("\n\"%s %s\" %d run(s) wallclock=%0.2f avg=%0.2f sec(s)\n", program, strings.Join(opts, " "), repeatMax, float64(elapsed), avg)
+	fmt.Printf("\n\"%s %s\" %d run(s) total=%0.2f avg=%0.2f sec(s)\n", program, strings.Join(opts, " "), repeatMax, float64(elapsed), avg)
 
 }
 
